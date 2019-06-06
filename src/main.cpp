@@ -8,7 +8,7 @@ int main() {
 
     std::string token;
     while((token = tokenizer->GetToken()).length() > 0) {
-        std::cou << token << std::endl;
+        std::cout << token << std::endl;
     }
 
     return 0;
