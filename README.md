@@ -5,7 +5,8 @@ language. Current plans strive for a procedural approach with designs capable
 of supporting Object-Orieted programming later.
 
 ## Building Astro
-Astro utilizes the CMake build system. `Download or compile CMake 3.12 or higher.
+Astro utilizes the CMake build system.
+Download or compile CMake 3.12 or higher.
 ```
 # Start at the root of the project.
 mkdir build
