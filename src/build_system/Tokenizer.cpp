@@ -18,6 +18,12 @@
 #define CONTAINS(x, y) (x.find(y) != std::string::npos)
 
 namespace astro {
+    /**
+     * Opens the file, filename, and breaks the contents into tokens as defined
+     * by the Astro language.
+     *
+     * @param filename Name of the file to tokenize.
+     */
     Tokenizer::Tokenizer(const std::string &filename)
         : m_cursor(0)
     {
@@ -29,7 +35,6 @@ namespace astro {
                       << std::endl;
             return;
         }
-
 
         /* Calculate it's length. */
         long length = file_in.tellg();
@@ -142,7 +147,6 @@ namespace astro {
 
             /*
              * In the case that no map pair is found simply exit.
-             * TODO: Find a more elegant way of failing.
              */
             if(type_postfix != nullptr) {
                 /* Find the whole token and add it to our set of tokens. */
@@ -151,7 +155,10 @@ namespace astro {
                 m_tokens.push_back(sub_token);
                 offset += sub_token.size();
             } else {
-                break;
+                std::string sub_token = token.substr(offset,
+                    token.size() - offset);
+                m_tokens.push_back(sub_token);
+                offset += sub_token.size();
             }
         }
     }

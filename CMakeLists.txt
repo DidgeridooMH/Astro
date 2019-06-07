@@ -3,6 +3,9 @@ project(Astro)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCES src/main.cpp src/Tokenizer.cpp)
+set(SOURCES
+    src/main.cpp
+    src/build_system/Tokenizer.cpp
+    )
 
 add_executable(Astro ${SOURCES})
