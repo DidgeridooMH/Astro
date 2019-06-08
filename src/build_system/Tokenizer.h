@@ -27,6 +27,7 @@ namespace astro {
         explicit Tokenizer(const std::string& filename);
 
         struct Token GetToken();
+        struct Token PeekToken();
     private:
         void Tokenize(char *p_buffer, size_t length);
         void SmartTokenize(const std::string& token, type_map *types,

@@ -117,6 +117,7 @@ namespace astro {
         map.insert(classify_pair(std::string("try"), TT_KEYWORD));
         map.insert(classify_pair(std::string("catch"), TT_KEYWORD));
         map.insert(classify_pair(std::string("return"), TT_KEYWORD));
+        map.insert(classify_pair(std::string("func"), TT_KEYWORD));
 
         /* Types */
         map.insert(classify_pair(std::string("int8"), TT_PRIM_TYPE));
@@ -335,9 +336,15 @@ namespace astro {
      *  Otherwise returns an empty string.
      */
     struct Token Tokenizer::GetToken() {
+        struct Token ret = PeekToken();
+        m_cursor++;
+        return ret;
+    }
+
+    struct Token Tokenizer::PeekToken() {
         if(m_cursor < m_tokens.size())
-            return m_tokens[m_cursor++];
+            return m_tokens[m_cursor];
         else
-            return {"", TT_UNKNOWN};
+            return {"", TT_DONE};
     }
 }

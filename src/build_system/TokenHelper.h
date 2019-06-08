@@ -25,7 +25,8 @@ namespace astro {
         TT_FUNC_DECLARE = 12,
         TT_EXPR_END = 13,
         TT_CONSTANT = 14,
-        TT_UNKNOWN = 15
+        TT_UNKNOWN = 15,
+        TT_DONE = 16
     };
 
     struct Token {
