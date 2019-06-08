@@ -6,9 +6,9 @@ using namespace astro;
 int main() {
     Tokenizer* tokenizer = new Tokenizer(std::string("../examples/test.ast"));
 
-    std::string token;
-    while((token = tokenizer->GetToken()).length() > 0) {
-        std::cout << token << std::endl;
+    Token token;
+    while((token = tokenizer->GetToken()).value.length() > 0) {
+        std::cout << token.value << " : " << TokenTypeToString(token.type) << std::endl;
     }
 
     return 0;

@@ -18,20 +18,22 @@
 #include <list>
 #include <vector>
 #include <map>
+#include "TokenHelper.h"
 
 namespace astro {
+
     class Tokenizer {
     public:
         explicit Tokenizer(const std::string& filename);
 
-        std::string GetToken();
+        struct Token GetToken();
     private:
         void Tokenize(char *p_buffer, size_t length);
-        void SmartTokenize(const std::string& token,
-            std::map<std::string, std::string> types);
+        void SmartTokenize(const std::string& token, type_map *types,
+            classify_map *classes);
 
-        std::vector<std::string> m_tokens;
-        long                     m_cursor;
+        std::vector<struct Token>   m_tokens;
+        long                        m_cursor;
     };
 }
 
