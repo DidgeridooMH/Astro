@@ -10,6 +10,7 @@
 #include <cstring>
 #include <fstream>
 #include <string>
+#include <iostream>
 #include "Tokenizer.h"
 
 #define SEPARATOR_SET "\t\n \r\v"

@@ -2,6 +2,7 @@
 // Created by daniel on 6/8/19.
 //
 
+#include <iostream>
 #include "FunctionBlock.h"
 
 namespace astro {

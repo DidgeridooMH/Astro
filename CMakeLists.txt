@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 project(Astro)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -10,6 +10,7 @@ set(SOURCES
     src/build_system/FileBlock.cpp
     src/build_system/FunctionBlock.cpp
     src/build_system/Variable.cpp
+    src/utils/Logger.cpp
     )
 
 add_executable(Astro ${SOURCES})

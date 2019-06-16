@@ -14,8 +14,6 @@
 #ifndef ASTRO_TOKENIZER_H
 #define ASTRO_TOKENIZER_H
 
-#include <iostream>
-#include <list>
 #include <vector>
 #include <map>
 #include "TokenHelper.h"
